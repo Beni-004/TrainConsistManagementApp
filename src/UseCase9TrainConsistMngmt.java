@@ -1,6 +1,7 @@
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 class Bogie {
     String name;
@@ -16,18 +17,19 @@ class Bogie {
     }
 }
 
-public class UseCase7TrainConsistMngmt {
+public class UseCase9TrainConsistMngmt {
     public static void main(String[] args) {
         List<Bogie> bogies = new ArrayList<>();
 
         bogies.add(new Bogie("Sleeper", 72));
         bogies.add(new Bogie("AC Chair", 56));
+        bogies.add(new Bogie("Sleeper", 72));
         bogies.add(new Bogie("First Class", 24));
+        bogies.add(new Bogie("AC Chair", 56));
 
-        bogies.sort(Comparator.comparingInt(b -> b.capacity));
+        Map<String, List<Bogie>> grouped = bogies.stream()
+                .collect(Collectors.groupingBy(b -> b.name));
 
-        for (Bogie b : bogies) {
-            System.out.println(b);
-        }
+        System.out.println("Grouped Bogies: " + grouped);
     }
 }
