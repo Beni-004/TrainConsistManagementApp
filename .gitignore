@@ -31,3 +31,4 @@ bin/
 
 .idea
 train.iml
+/out
