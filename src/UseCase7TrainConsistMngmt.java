@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 class Bogie {
     String name;
@@ -17,6 +18,13 @@ class Bogie {
 }
 
 public class UseCase7TrainConsistMngmt {
+
+    public static List<Bogie> filterByCapacity(List<Bogie> bogies, int threshold) {
+        return bogies.stream()
+                .filter(b -> b.capacity > threshold)
+                .collect(Collectors.toList());
+    }
+
     public static void main(String[] args) {
         List<Bogie> bogies = new ArrayList<>();
 
