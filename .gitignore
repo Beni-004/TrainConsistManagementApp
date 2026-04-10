@@ -32,6 +32,7 @@ bin/
 .idea
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 train.iml
 /out
 *.iml
@@ -43,3 +44,7 @@ train.iml
 *.iml
 /out
 >>>>>>> feature/UC9
+=======
+*.iml
+/out
+>>>>>>> feature/UC10
