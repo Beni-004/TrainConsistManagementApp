@@ -30,5 +30,5 @@ bin/
 .DS_Store
 
 .idea
-train.iml
+*.iml
 /out
