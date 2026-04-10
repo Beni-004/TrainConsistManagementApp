@@ -33,6 +33,7 @@ bin/
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 train.iml
 /out
 *.iml
@@ -48,3 +49,7 @@ train.iml
 *.iml
 /out
 >>>>>>> feature/UC10
+=======
+*.iml
+/out
+>>>>>>> feature/UC14
