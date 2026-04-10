@@ -32,3 +32,4 @@ bin/
 .idea
 train.iml
 /out
+*.iml
