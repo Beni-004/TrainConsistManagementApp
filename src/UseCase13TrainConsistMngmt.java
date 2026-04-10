@@ -10,10 +10,36 @@ class Bogie {
         this.name = name;
         this.capacity = capacity;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
 }
 
 public class UseCase13TrainConsistMngmt {
+
+    public static List<Bogie> filterUsingLoop(List<Bogie> bogies) {
+        List<Bogie> result = new ArrayList<>();
+        for (Bogie b : bogies) {
+            if (b.getCapacity() > 60) {
+                result.add(b);
+            }
+        }
+        return result;
+    }
+
+    public static List<Bogie> filterUsingStream(List<Bogie> bogies) {
+        return bogies.stream()
+                .filter(b -> b.getCapacity() > 60)
+                .collect(Collectors.toList());
+    }
+
     public static void main(String[] args) {
+
         List<Bogie> bogies = new ArrayList<>();
 
         for (int i = 0; i < 100000; i++) {
@@ -23,22 +49,11 @@ public class UseCase13TrainConsistMngmt {
         }
 
         long startLoop = System.nanoTime();
-
-        List<Bogie> loopResult = new ArrayList<>();
-        for (Bogie b : bogies) {
-            if (b.capacity > 60) {
-                loopResult.add(b);
-            }
-        }
-
+        List<Bogie> loopResult = filterUsingLoop(bogies);
         long endLoop = System.nanoTime();
 
         long startStream = System.nanoTime();
-
-        List<Bogie> streamResult = bogies.stream()
-                .filter(b -> b.capacity > 60)
-                .collect(Collectors.toList());
-
+        List<Bogie> streamResult = filterUsingStream(bogies);
         long endStream = System.nanoTime();
 
         System.out.println("Loop Time: " + (endLoop - startLoop));
