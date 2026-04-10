@@ -7,7 +7,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class UseCase12TrainConsistMngmtTest {
 
-    // Helper method
     private List<GoodsBogie> createBaseList() {
         List<GoodsBogie> bogies = new ArrayList<>();
         bogies.add(new GoodsBogie("Cylindrical", "Petroleum"));
