@@ -30,6 +30,11 @@ bin/
 .DS_Store
 
 .idea
+<<<<<<< HEAD
 train.iml
 /out
 *.iml
+=======
+*.iml
+/out
+>>>>>>> feature/UC8
